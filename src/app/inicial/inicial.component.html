@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+                <div class="card-header">
+                    CURSOS ONLINE
+                </div>
+                <div *ngFor="let online of cursosOnline">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ online.titulo }} </h5>
+                        
+                        <a [routerLink]="['/detalhe-curso', online.id]">
+                            <p> <br> Detalhes</p>
+                        </a>
+                    </div>
+                    
+                </div>
+        </div>
+        
+    </div>
+
+    <div class="col-sm-6">
+        <div class="card">
+                <div class="card-header">
+                    CURSOS PRESENCIAIS
+                </div>
+                <div *ngFor="let online of cursosPresenciais">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ online.titulo }} </h5>
+                        
+                        <a [routerLink]="['/detalhe-curso', online.id]">
+                            <p> <br> Detalhes</p>
+                        </a>
+                    </div>
+                    
+                </div>
+        </div> 
+        
+    </div>
+</div>
+ 
+

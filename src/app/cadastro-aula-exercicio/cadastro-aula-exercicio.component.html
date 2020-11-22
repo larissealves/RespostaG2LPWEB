@@ -1,0 +1,32 @@
+<div class="container">
+
+  <form class="form-group" #cadastro="ngForm" (submit)="salvarAula()"> 
+    <h3> Curso {{cursoId.titulo}} </h3><br>
+    <p> Cadastre uma nova aula! </p>
+      <div class="form-group">
+        <label for="titulo"> Titulo </label>
+        <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="titulo">
+      </div>
+      <div class="form-group">
+        <label for="tempoDuracao"> Duração </label>      
+        <input type="text" class="form-control" id="tempoDuracao" name="tempoDuracao" [(ngModel)]="tempoDuracao">
+      </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!cadastro.valid">Cadastrar</button>
+  </form>
+
+<div class="form-group"> 
+  <h4> Aulas do Curso - {{cursoId.titulo}} </h4>
+  <br>
+  <div  class="form-group inline" *ngFor="let aulas of aulasDoCurso">
+    <h5> Aulas Cadastradas </h5>
+    <p><small> Duraçao: {{aulas.tempoDuracao}} </small></p>
+    <a [routerLink]="['/detalhe-aula', aulas.id]">
+      <p style="color: #FF6265;"> Detalhes</p>
+    </a>
+    <button type="button" class="btn btn-primary" (click)='excluirAulaId(aulas.id)'>
+      Excluir Aula
+    </button>
+  </div>
+</div>   
+
+</div>

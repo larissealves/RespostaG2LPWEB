@@ -1,0 +1,31 @@
+
+<div class="container">
+
+    <form class="form-group" #cadastro="ngForm" (submit)="salvarExercicio()"> 
+        <h4> {{aula.titulo}}</h4>
+        <p>Cadastre uma nova atividade para esta aula!</p>
+        
+        <div class="form-group">
+            <label for="exercicio">Enunciado </label>
+            <input type="text" class="form-control" id="exercicio" name="exercicio" [(ngModel)]="exercicio">
+        </div>
+        <button type="button" class="btn btn-primary" (click)='salvarExercicio()' class="btn btn-primary">
+            Adicionar Atividade
+        </button> &nbsp;&nbsp;
+    </form>
+  
+    <div class="form-group"> 
+        <h4> Exercicios da Aula  </h4>
+        <br>
+        <div *ngFor="let aulas of exerciciosDaAula">
+          <br>
+          <h5> Questão:</h5>
+          <p>{{aulas.exercicio}}</p>
+          <button type="button" class="btn btn-primary" (click)="excluirExercicio(aulas.id)">
+            Excluir Exercicio
+          </button>
+        </div>
+        <br>
+    </div>  
+
+</div>

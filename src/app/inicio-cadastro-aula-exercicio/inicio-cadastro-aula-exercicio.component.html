@@ -1,0 +1,23 @@
+
+
+<div class="container">  
+    <h5>Cursos Online </h5> 
+
+    <div *ngFor="let online of cursosOnline">
+        {{ online.titulo}}
+        <a [routerLink]="['/cadastro-aula-exercicio', online.id]" class="col-md-auto">
+            <p style="color: #FF6265;"> <br> Detalhes </p>
+        </a>
+    </div> 
+</div>
+<hr>
+<div class="container">
+    <h5>Cursos Presenciais </h5> 
+    
+    <div *ngFor="let presencial of cursosPresenciais">
+        {{ presencial.titulo }}
+        <a [routerLink]="['/cadastro-aula-exercicio', presencial.id]" class="col-md-auto">
+            <p style="color: #FF6265;"> <br> Detalhes </p>
+        </a>
+    </div> 
+</div>

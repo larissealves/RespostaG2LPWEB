@@ -1,0 +1,25 @@
+<div class="container">
+<form class="form-group" #cadastro="ngForm" (submit)="salvar()"> 
+    <div class="form-group">
+      <label for="descricao">Titulo </label>
+      <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="titulo">
+    </div>
+    <div class="form-group">
+      <label for="descricao">Descrição </label>
+      <input type="text" class="form-control" id="descricao" name="descricao" [(ngModel)]="descricao">
+    </div>
+    <div class="form-group">
+      <label for="professores">Professores</label>
+      <select class="form-control" name="professores" id="professores" [(ngModel)]="professorSelecionado" required>
+        <option *ngFor="let autor of professores">{{ autor.nome }}</option>
+      </select>
+    </div> 
+    <div class="form-group">
+      <label for="categoria">categorias</label>
+      <select class="form-control" name="categorias" id="categorias" [(ngModel)]="categoriaSelecionada" required>
+        <option *ngFor="let cat of categorias">{{ cat.categoria }}</option>
+      </select>
+    </div>    
+          
+    <button type="submit" class="btn btn-primary" (click)="obterCursos" [disabled]="!cadastro.valid">Submit</button>
+</form>

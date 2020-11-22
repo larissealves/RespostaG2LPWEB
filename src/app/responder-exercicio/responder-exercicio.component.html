@@ -1,0 +1,24 @@
+<h1> Aulas Do Curso </h1><br>
+<div  class="form-group" *ngFor="let aulas of aulasDoCurso">
+    <h6> {{ aulas.titulo }} </h6>
+    <p><small> Duraçao: {{aulas.tempoDuracao}} </small></p><br>
+   
+   <p>Exercícios da Aula</p>
+    <div *ngIf="exerciciosDaAula.length>0">
+      <div *ngFor="let exec of exerciciosDaAula">
+        <p>QUESTÃO:  <strong>{{exec.exercicio}}</strong></p>
+      </div>
+      <div *ngIf="respondido!=true">
+        <form class="form-group" #cadastro="ngForm" (submit)="salvarResposta()"> 
+          <div class="form-group">
+            <label for="resposta"> -</label>
+            <input type="text" class="form-control" id="resposta" placeholder="responda aqui..." name="resposta" [(ngModel)]="resposta">{{resposta.resposta}}
+          </div>
+                  <button type="submit" class="btn btn-primary" [disabled]="!cadastro.valid">Responder</button>
+
+        </form>
+      <div>
+      </div>
+    </div>
+    Sua resposta: <p>{{resposta.resposta}}</p>
+   

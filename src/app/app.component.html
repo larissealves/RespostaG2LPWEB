@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-link active" [routerLink]="['/inicio']">Inicio</a>&nbsp;
+      <a class="nav-link active" [routerLink]="['/empresa-cadastro-curso']">Empresa</a>&nbsp;
+      <a class="nav-link active" [routerLink]="['/inicio-cadastro-aula-exercicio']">Professor</a>&nbsp;
+      <a class="nav-link active" [routerLink]="['/cadastro-aluno']">Aluno</a>
+    </div>
+  </div>
+</nav>
+<div class="container">
+    <div class="form-group">
+    <br>
+    <br>
+    <router-outlet></router-outlet>
+
+  </div>
+</div>
